@@ -1,0 +1,22 @@
+<table id="files" class="files">
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>User email</th>
+      <th>User bio</th>
+      <th>User Id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% if @user %>
+    <tr>
+        <td><label><%= @user.name %><label></td>
+        <td><label><%= @user.email %><label></td>
+        <td><label><%= @user.bio %><label></td>
+        <td><label><%= @user.id %><label></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
