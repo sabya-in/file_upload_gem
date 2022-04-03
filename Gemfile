@@ -7,6 +7,8 @@ ruby '3.0.1'
 gem 'rails', '~> 6.1.5'
 # Devise gem
 gem 'devise'
+# File uploader carrierview
+gem 'carrierwave', '~> 2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
