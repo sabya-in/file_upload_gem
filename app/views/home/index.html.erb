@@ -1,3 +1,4 @@
+<h3>Your Profile Summary</h3>
 <table id="files" class="files">
   <thead>
     <tr>
@@ -10,7 +11,7 @@
   </thead>
 
   <tbody>
-  <% if @user %>
+  <% if user_signed_in? %>
     <tr>
         <td><label><%= @user.name %><label></td>
         <td><label><%= @user.email %><label></td>

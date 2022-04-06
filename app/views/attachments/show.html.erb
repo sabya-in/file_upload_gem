@@ -14,5 +14,27 @@
 
 <hr>
 
-<%= link_to 'Edit', edit_attachment_path(@attachment) %> |
-<%= link_to 'Back', attachments_path %>
+<button type="button" class="btn btn-info">
+  <%= link_to 'Back', attachments_path %>
+</button>
+
+<hr>
+<div class="card" style="width: 18rem;">
+  <h3>Share</h3>
+  <%= form_tag(:controller => "share", :action => "create") do %>
+      <div class="row">
+        <div class="form-group col-8">
+          <%= label_tag(:email, "Shared With:") %>
+          <%= text_field_tag(:email) %>
+        </div>
+        <div class="form-group col-8">
+          <%= label_tag(:email, "File name:") %>
+          <input type="text" class="form-control mb-3" id="file" name="file" value= <%= @attachment.file %> readonly>
+        </div>
+        <div class="form-group col-8">
+          <%= submit_tag("Share") %>
+        </div>
+      </div>
+      
+  <% end %>
+</div>

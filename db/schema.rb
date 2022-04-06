@@ -10,11 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_01_150318) do
+ActiveRecord::Schema.define(version: 2022_04_04_181959) do
 
   create_table "attachments", force: :cascade do |t|
     t.string "file"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "sharedBy"
+    t.string "shared"
+  end
+
+  create_table "shares", force: :cascade do |t|
+    t.integer "sharedBy"
+    t.integer "user_id"
+    t.integer "attachment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -40,4 +50,6 @@ ActiveRecord::Schema.define(version: 2022_04_01_150318) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "shares", "attachments"
+  add_foreign_key "shares", "users"
 end

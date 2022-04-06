@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ShareTest < ActiveSupport::TestCase
+class ShareControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

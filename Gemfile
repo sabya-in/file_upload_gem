@@ -5,6 +5,11 @@ ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.5'
+# bootstrap css
+gem "twitter-bootstrap-rails"
+gem "bootstrap-sass"
+# entity relation mapper
+gem 'rails-erd'
 # Devise gem
 gem 'devise'
 # File uploader carrierview

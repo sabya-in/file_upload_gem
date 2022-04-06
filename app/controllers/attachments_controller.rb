@@ -4,23 +4,13 @@ class AttachmentsController < ApplicationController
   # GET /attachments or /attachments.json
   def index
     @user = current_user
-    @attachments = Attachment.all
+    @attachments = @user.attachments.where(shared: [nil, ""])
   end
 
   # GET /attachments/1 or /attachments/1.json
   def show
     @user = current_user
-  end
-
-  # GET /attachments/new
-  def new
-    @user = current_user
-    @attachment = Attachment.new
-  end
-
-  # GET /attachments/1/edit
-  def edit
-    @user = current_user
+    @attachment = set_attachment
   end
 
   # POST /attachments or /attachments.json
@@ -34,20 +24,6 @@ class AttachmentsController < ApplicationController
         format.json { render :show, status: :created, location: @attachment }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @attachment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /attachments/1 or /attachments/1.json
-  def update
-    @user = current_user
-    respond_to do |format|
-      if @attachment.update(attachment_params)
-        format.html { redirect_to attachment_url(@attachment), notice: "Attachment was successfully updated." }
-        format.json { render :show, status: :ok, location: @attachment }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @attachment.errors, status: :unprocessable_entity }
       end
     end

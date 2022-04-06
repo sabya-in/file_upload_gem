@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "custom/devise_styles.css";
+
+ body {
+    padding-top: 70px;  // without this the 50px nav hides portion of body
+  }
