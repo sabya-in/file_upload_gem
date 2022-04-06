@@ -18,5 +18,24 @@
  @import "custom/devise_styles.css";
 
  body {
-    padding-top: 70px;  // without this the 50px nav hides portion of body
+    padding-top: 100px;  // without this the 50px nav hides portion of body
+    background-color: #dff0d8;
+  }
+
+  .card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
+    transition: 0.3s;
+    border-radius: 5px;
+    background-color: turquoise;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.473);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 20px 16px;
   }

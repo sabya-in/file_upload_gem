@@ -19,10 +19,16 @@
 </button>
 
 <hr>
-<div class="card" style="width: 18rem;">
-  <h3>Share</h3>
+
   <%= form_tag(:controller => "share", :action => "create") do %>
+    
       <div class="row">
+      <div class="card">
+      <div class="card-body p-5 container">
+
+        <div class="form-group col-8">
+          <%= submit_tag("Share") %>
+        </div>
         <div class="form-group col-8">
           <%= label_tag(:email, "Shared With:") %>
           <%= text_field_tag(:email) %>
@@ -31,10 +37,9 @@
           <%= label_tag(:email, "File name:") %>
           <input type="text" class="form-control mb-3" id="file" name="file" value= <%= @attachment.file %> readonly>
         </div>
-        <div class="form-group col-8">
-          <%= submit_tag("Share") %>
-        </div>
+
+      </div>
+      </div>
       </div>
       
   <% end %>
-</div>

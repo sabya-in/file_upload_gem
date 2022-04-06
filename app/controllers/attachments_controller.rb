@@ -7,6 +7,10 @@ class AttachmentsController < ApplicationController
     @attachments = @user.attachments.where(shared: [nil, ""])
   end
 
+  def new
+    @attachment = Attachment.new
+  end
+
   # GET /attachments/1 or /attachments/1.json
   def show
     @user = current_user

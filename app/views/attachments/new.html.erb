@@ -1,7 +1,11 @@
 <h1>New Attachment</h1>
 
-<%= render 'form', attachment: @attachment %>
+<div class="card">
+<div class="card-body p-5 container">
+    <%= render 'form', attachment: @attachment %>
 
-<button type="button" class="btn btn-sucess">
-    <%= link_to 'Back', attachments_path %>
-</button>
+    <button type="button" class="btn btn-sucess">
+        <%= link_to 'Back', attachments_path %>
+    </button>
+</div>
+</div>
